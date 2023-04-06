@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>为博客插入音乐</title>
+      <link href="/2023/04/06/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90/"/>
+      <url>/2023/04/06/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E9%9F%B3%E4%B9%90/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>偶然间看到别人的博客有音乐挂件，必须安排！</p><p>搜了下可以利用插件<code>hexo-tag-aplayer</code> 播放器支持一些主流平台的音乐播放，这里我用了网易云音乐。</p><p><strong>效果</strong>：可以折叠起来，展开来是这样的：</p><img src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/20230406195058.png" style="zoom:50%;" /><h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h5 id="安装hexo插件"><a href="#安装hexo插件" class="headerlink" title="安装hexo插件"></a>安装hexo插件</h5><p>打开<code>Mac</code>终端<code>cd</code>到博客目录</p><pre><code>npm install --save hexo-tag-aplayer</code></pre><h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><p>在Hexo配置文件<code>_config.xml</code>搜索<code>aplayer</code>，搜索不到就在最后添加.</p><pre><code>aplayer:  meting: true  asset_inject: false </code></pre><p>主题配置文件中修改配置</p><pre><code>aplayerInject:  enable: true  per_page: true</code></pre><p>还有个配置修改，作用时切换页面时音乐不会中断</p><pre><code>pjax:  enable: true  exclude:</code></pre><h5 id="插入Aplayer播放器"><a href="#插入Aplayer播放器" class="headerlink" title="插入Aplayer播放器"></a>插入Aplayer播放器</h5><h6 id="引入播放器的位置和对应的单个音乐或者歌单的设置"><a href="#引入播放器的位置和对应的单个音乐或者歌单的设置" class="headerlink" title="引入播放器的位置和对应的单个音乐或者歌单的设置"></a>引入播放器的位置和对应的单个音乐或者歌单的设置</h6><pre><code>inject:  head:  bottom:    # - &lt;script src=&quot;xxxx&quot;&gt;&lt;/script&gt;     - &lt;div class=&quot;aplayer&quot; data-id=&quot;8283046977&quot; data-server=&quot;netease&quot; data-type=&quot;playlist&quot; data-fixed=&quot;true&quot; data-mini=&quot;true&quot; data-listFolded=&quot;false&quot; data-order=&quot;random&quot; data-preload=&quot;none&quot; data-autoplay=&quot;true&quot; muted&gt;&lt;/div&gt;</code></pre><p><code>div</code>内的有必要修改的属性对应如下:</p><table><thead><tr><th>选项</th><th align="center">描述</th></tr></thead><tbody><tr><td>data-id</td><td align="center">歌曲id&#x2F;歌单id</td></tr><tr><td>data-server</td><td align="center">平台：netease(网易云音乐),tencent(腾讯音乐),kugou(酷狗)</td></tr><tr><td>data-type</td><td align="center">song, playlist   (一首，一列歌单)</td></tr></tbody></table><h6 id="data-id获取方式："><a href="#data-id获取方式：" class="headerlink" title="data-id获取方式："></a><code>data-id</code>获取方式：</h6><p>直接新建一个blog歌单，添加歌曲之后，只要重新更新下博客就能更新歌曲列表了。</p><img src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/20230406201830.png" style="zoom:33%;" /><p>附上参考的文章。这兄弟博客可真好看</p><pre><code>https://butterfly.js.org/posts/507c070f/</code></pre><h1 id="end"><a href="#end" class="headerlink" title="end"></a>end</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《流浪地球2》没说的都在这里了</title>
       <link href="/2023/02/20/%E3%80%8A%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%832%E3%80%8B%E6%B2%A1%E8%AF%B4%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C%E4%BA%86/"/>
       <url>/2023/02/20/%E3%80%8A%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%832%E3%80%8B%E6%B2%A1%E8%AF%B4%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C%E4%BA%86/</url>
