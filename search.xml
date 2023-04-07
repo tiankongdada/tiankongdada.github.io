@@ -112,7 +112,7 @@
       <link href="/2023/02/17/%E6%88%91%E7%9A%84%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/17/%E6%88%91%E7%9A%84%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h4 id="加入一张图片"><a href="#加入一张图片" class="headerlink" title="加入一张图片"></a>加入一张图片</h4><p><img src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/avatar.jpg" alt="one pic"></p><h4 id="inlineImg的使用"><a href="#inlineImg的使用" class="headerlink" title="inlineImg的使用"></a>inlineImg的使用</h4><pre><code>&#123;% inlineImg [src] [height] %&#125;[src]      :    图片链接[height]   ：   图片高度限制（可选）</code></pre><p>这是文字 。  <img class="inline-img" src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/knight6.jpeg" style="height:150px"/></p><h4 id="flink"><a href="#flink" class="headerlink" title="flink"></a>flink</h4>]]></content>
+        <content type="html"><![CDATA[<h4 id="这里是主题官网，先看看文档"><a href="#这里是主题官网，先看看文档" class="headerlink" title="这里是主题官网，先看看文档"></a>这里是主题官网，先看看文档</h4><p><a href="https://butterfly.js.org/">butterfly主题</a></p><h4 id="加入一张图片"><a href="#加入一张图片" class="headerlink" title="加入一张图片"></a>加入一张图片</h4><p><img src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/avatar.jpg" alt="one pic"></p><h4 id="inlineImg的使用"><a href="#inlineImg的使用" class="headerlink" title="inlineImg的使用"></a>inlineImg的使用</h4><pre><code>&#123;% inlineImg [src] [height] %&#125;[src]      :    图片链接[height]   ：   图片高度限制（可选）</code></pre><p>这是文字 。  <img class="inline-img" src="https://cdn.jsdelivr.net/gh/tiankongdada/Image/knight6.jpeg" style="height:150px"/></p><h4 id="flink"><a href="#flink" class="headerlink" title="flink"></a>flink</h4>]]></content>
       
       
       <categories>
