@@ -6,7 +6,7 @@
   <link href="https://tiankongdada.github.io/atom.xml" rel="self"/>
   
   <link href="https://tiankongdada.github.io/"/>
-  <updated>2023-04-06T13:52:51.302Z</updated>
+  <updated>2023-04-12T12:43:10.680Z</updated>
   <id>https://tiankongdada.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于vue.js的后台管理系统-面包屑功能的实现</title>
+    <link href="https://tiankongdada.github.io/2023/04/12/%E5%9F%BA%E4%BA%8Evue-js%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%9D%A2%E5%8C%85%E5%B1%91%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://tiankongdada.github.io/2023/04/12/%E5%9F%BA%E4%BA%8Evue-js%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%9D%A2%E5%8C%85%E5%B1%91%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
+    <published>2023-04-12T12:00:33.521Z</published>
+    <updated>2023-04-12T12:43:10.680Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;从后台管理系统代码中理出来的单独的面包屑功能的代码，使用了&lt;code&gt;element</summary>
+        
+      
+    
+    
+    
+    <category term="前端教程" scheme="https://tiankongdada.github.io/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="vue" scheme="https://tiankongdada.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>为博客插入音乐</title>
