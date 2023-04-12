@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/04/12/%E5%BC%BA%E7%BC%93%E5%AD%98%E5%92%8C%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/"/>
+      <url>/2023/04/12/%E5%BC%BA%E7%BC%93%E5%AD%98%E5%92%8C%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>收集的前端面试题</p><hr><h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>因为缓存机制实际上可以有多层, 各个层次对应各自的细分场景. 为了分析需要, 我们首先将缓存简化为: <strong>把原本需要浏览器向服务端发起网络请求才能获得的资源直接放在浏览器本地</strong></p><p>通过使用缓存, 既可以加快浏览器请求得到响应的速度(直接在本地读取), 又可以减轻服务端的网络压力(收到的资源请求减少)</p><p>缓存能够成立, 是基于这样一条规律: <strong>浏览器请求的资源在一定时间内可能并不会发生改变</strong>. 在请求资源并未发生改变的时间段内, 与其重复请求相同的结果, 不如直接利用上一次请求的结果</p><p>但是在 Web 场景下, 资源不会发生改变的时间到底会持续多久? 这谁也不能完全确定. 此时我们首先引入了<strong>强缓存</strong>机制</p><h3 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h3><p>强缓存机制可以这么理解:</p><ol><li><p>服务端向浏览器”打包票”: “接下来五分钟内我必不更新这个资源(<code>Cache-Control: max-age=300</code>), 你放心把资源放在你那儿用!”</p></li><li><p>既然服务端这么说了, 那在这五分钟内浏览器如果有需要, 就直接使用该资源的本地版本(请求实际由本地资源响应), 就不麻烦服务端了(浏览器请求实际并不进入网络)</p><table><thead><tr><th>强缓存响应状态码</th><th>资源实际来源</th><th>场景</th><th>缓存释放</th></tr></thead><tbody><tr><td><code>200 form memory cache</code></td><td>内存缓存</td><td>刚关闭网页又马上打开</td><td>浏览器关闭</td></tr><tr><td><code>200 form disk cache</code></td><td>硬盘缓存</td><td>先前访问过该网页</td><td>浏览器清理硬盘缓存</td></tr></tbody></table></li></ol><p>可五分钟之后呢? 这时就引入了<strong>协商缓存</strong>机制</p><h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>当”五分钟”过去, 浏览器该怎么办呢? 把放在本地的资源扔了向服务端要份新的? 可要是资源没有更新版本, 那不就浪费了吗? 可要是资源更新了版本, 那肯定是用新版本更舒坦呀!</p><p>这时候与其精神内耗, 不如主动出击! 浏览器直接向服务端发问: “这资源到底改没改呀? 要是没改我就拿着本地的版本接着用了, 改了就给我整份新的呗!”</p><p>这就是<strong>协商缓存</strong>的大致逻辑: 当<strong>资源放在本地作为强缓存的时间超过服务端保证的时间</strong>, 浏览器并不会直接重新请求该资源, 而是向服务端询问资源是否更新版本. 该”询问”的过程如下:</p><ol><li><p>浏览器发现缓存资源过旧, 向服务端询问资源是否更新版本:</p><table><thead><tr><th>依据字段</th><th>含义</th><th>对应条件请求字段</th><th>作用</th></tr></thead><tbody><tr><td><code>Etag</code></td><td>资源某一版本的唯一标识(只能保证在单一主机上唯一)</td><td><code>If-None-Match</code></td><td>判断该资源与服务端该资源的 <code>Etag</code> 是否一致</td></tr><tr><td><code>Last-Modified</code></td><td>资源上一次被修改的时间</td><td><code>If-Modified-since</code></td><td>判断该资源从上次获取到此次请求间是否发生了更新</td></tr></tbody></table></li><li><p>服务端向浏览器告知资源是否更新版本:</p><table><thead><tr><th>资源是否更新</th><th>响应状态码</th><th>后续处理</th></tr></thead><tbody><tr><td>是</td><td><code>200 OK</code></td><td>服务端向浏览器传输该资源的最新版本</td></tr><tr><td>否</td><td><code>304 Not Modified</code></td><td>浏览器继续使用本地版本</td></tr></tbody></table></li></ol><h2 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h2><p>我们首先将缓存简化为: 把原本需要浏览器向服务端发起网络请求才能获得的资源直接放在浏览器本地. 通过使用缓存, 既可以加快浏览器请求得到响应的速度(直接在本地读取), 又可以减轻服务端的网络压力(收到的资源请求减少)</p><p>缓存能够成立, 是基于这样一条规律: “浏览器请求的资源在一定时间内可能并不会发生改变”. 在请求资源并未发生改变的时间段内, 与其重复请求相同的结果, 不如直接利用上一次请求的结果</p><p>但是资源不会发生改变的时间会持续多久? 谁都无法完全确定. 因此我们首先引入了<strong>强缓存</strong>机制: 服务端在响应报文中通过 <code>Cache-Control: max-age=[time]</code> 字段向浏览器保证在接下来的一段时间内, 该资源一定不会被修改. 因此这一时间段内, 浏览器对该资源的请求可以直接由本地版本响应</p><p>当资源作为强缓存的时间超过服务端保证的时间, 此时就引入了<strong>协商缓存</strong>机制: 浏览器将基于 <code>Etag</code>字段发起条件请求 <code>If-None-Match</code>, 或是基于 <code>Last-Modified</code> 字段发起条件请求 <code>If-Modified-Since</code>, 向服务端询问: “该资源是否发生修改?” 若发生修改, 则服务端将返回 <code>200 OK</code> 并传输该资源的最新版本; 若未发生修改, 则服务端将返回 <code>304 Not Modified</code>, 告知浏览器可直接使用本地版本</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端面试题 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于vue.js的后台管理系统-面包屑功能的实现</title>
       <link href="/2023/04/12/%E5%9F%BA%E4%BA%8Evue-js%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%9D%A2%E5%8C%85%E5%B1%91%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
       <url>/2023/04/12/%E5%9F%BA%E4%BA%8Evue-js%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E9%9D%A2%E5%8C%85%E5%B1%91%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
